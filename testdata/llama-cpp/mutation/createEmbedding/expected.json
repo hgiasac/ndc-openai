@@ -1,0 +1,22 @@
+{
+  "operation_results": [
+    {
+      "result": {
+        "data": [
+          {
+            "index": 0,
+            "object": "embedding"
+          },
+          {
+            "index": 1,
+            "object": "embedding"
+          }
+        ],
+        "model": "GPT-4",
+        "object": "list",
+        "usage": { "prompt_tokens": 0, "total_tokens": 0 }
+      },
+      "type": "procedure"
+    }
+  ]
+}

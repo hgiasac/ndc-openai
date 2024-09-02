@@ -1,0 +1,27 @@
+services:
+  ndc-openai:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    volumes:
+      - ./config:/etc/connector:ro
+    environment:
+      OPENAI_SERVER_URL: ${OPENAI_SERVER_URL}
+      OPENAI_API_KEY_AUTH_TOKEN: ${OPENAI_API_KEY_AUTH_TOKEN}
+      HASURA_LOG_LEVEL: debug
+
+  llama-server:
+    # image: ghcr.io/ggerganov/llama.cpp:server--b1-8f1d81a
+    build:
+      context: ./testdata/llama-cpp
+    ports:
+      - 5050:5050
+    environment:
+      LLAMA_ARG_MODEL: /models/qwen2-0_5b-instruct-q4_k_m.gguf
+      # alternatively, you can use "LLAMA_ARG_MODEL_URL" to download the model
+      # LLAMA_ARG_MODEL_URL: https://huggingface.co/Qwen/Qwen2-0.5B-Instruct-GGUF/resolve/main/qwen2-0_5b-instruct-q4_k_m.gguf?download=true
+      LLAMA_ARG_CTX_SIZE: 4096
+      LLAMA_ARG_N_PARALLEL: 1
+      LLAMA_ARG_ENDPOINT_METRICS: 0 # to disable, either remove or set to 0
+      LLAMA_ARG_PORT: 5050

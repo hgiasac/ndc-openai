@@ -1,0 +1,16 @@
+packagingDefinition:
+  type: PrebuiltDockerImage
+  dockerImage: ghcr.io/hgiasac/ndc-openai:{{VERSION}}
+supportedEnvironmentVariables:
+  - OPENAI_SERVER_URL
+  - OPENAI_API_KEY_AUTH_TOKEN
+  - OPENAI_TIMEOUT
+  - OPENAI_RETRY_TIMES
+  - OPENAI_RETRY_DELAY
+  - OPENAI_RETRY_HTTP_STATUS
+commands: {}
+dockerComposeWatch:
+  # copy config files into the existing container and restart it
+  - path: ./config
+    target: /etc/connector
+    action: sync+restart

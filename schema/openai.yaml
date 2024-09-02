@@ -1,0 +1,6 @@
+file: https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml
+spec: oas3
+envPrefix: OPENAI
+patchAfter:
+  - path: patch-after.yaml
+    strategy: merge

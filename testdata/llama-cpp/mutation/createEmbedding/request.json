@@ -1,0 +1,65 @@
+{
+  "collection_relationships": {},
+  "operations": [
+    {
+      "type": "procedure",
+      "name": "createEmbedding",
+      "arguments": {
+        "body": {
+          "input": ["hello", "world"],
+          "model": "GPT-4"
+        }
+      },
+      "fields": {
+        "fields": {
+          "data": {
+            "column": "data",
+            "fields": {
+              "fields": {
+                "fields": {
+                  "index": {
+                    "column": "index",
+                    "type": "column"
+                  },
+                  "object": {
+                    "column": "object",
+                    "type": "column"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "column"
+          },
+          "model": {
+            "column": "model",
+            "type": "column"
+          },
+          "object": {
+            "column": "object",
+            "type": "column"
+          },
+          "usage": {
+            "column": "usage",
+            "fields": {
+              "fields": {
+                "prompt_tokens": {
+                  "column": "prompt_tokens",
+                  "type": "column"
+                },
+                "total_tokens": {
+                  "column": "total_tokens",
+                  "type": "column"
+                }
+              },
+              "type": "object"
+            },
+            "type": "column"
+          }
+        },
+        "type": "object"
+      }
+    }
+  ]
+}

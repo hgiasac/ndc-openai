@@ -1,0 +1,31 @@
+{
+  "operation_results": [
+    {
+      "result": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "Hello! How can I assist you today?",
+              "function_call": null,
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "model": "gpt-3.5-turbo",
+        "object": "chat.completion",
+        "service_tier": null,
+        "system_fingerprint": null,
+        "usage": {
+          "completion_tokens": 10,
+          "prompt_tokens": 21,
+          "total_tokens": 31
+        }
+      },
+      "type": "procedure"
+    }
+  ]
+}

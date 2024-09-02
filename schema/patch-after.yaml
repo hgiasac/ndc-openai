@@ -1,0 +1,3 @@
+settings:
+  headers:
+    OpenAI-Beta: assistants=v2
